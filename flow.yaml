@@ -1,0 +1,61 @@
+# Version format ex. "0.0.1"
+version: "0.0.1"                            # Flow specification version
+
+# Basic metadata for the agent
+metadata:
+  name: "riasec-career-advisor"                               # Unique identifier
+  description: "An AI career guidance system using the RIASEC model to help students and professionals find suitable career paths."       # Flow purpose
+  author: "bugp"                              # Must match your account username
+  tags: [career-guidance, RIASEC, personality-assessment, career-planning, education, professional-development]                       # Keywords for categorization
+  private: false                                       # Access control setting
+
+# Define the input variables required
+inputs:
+    personality_traits:                                              # First input parameter
+    type: string                                       # Currently only String format
+    description: "Answer questions about your interests, skills, and preferences to determine your RIASEC profile"
+    required: true
+    example: "I enjoy solving complex problems, I like working independently, I prefer analytical tasks"
+    background_details:                                              # Second input parameter
+    type: string
+    description: "Provide your educational background, current academic status, and any relevant experience."
+    required: true
+    example: "Computer Science undergraduate, Pre-final year, Experience with Python programming"
+
+# LLM configuration
+model:
+  provider: "openai"                            # e.g., anthropic, openai, meta, etc.
+  name: "gpt-4o"                                   # Specific model identifier
+
+# Dataset configuration (Optional)
+# dataset:
+#   source: "author_name/dataset_name"                   # Make sure this dataset exists
+
+# Prompt template configuration
+# Prompt template configuration
+prompt: |
+  Act as a career counselor and analyze {personality_traits} and {background_details} to:
+  1. Determine the user's primary RIASEC personality types
+  2. Suggest suitable career paths based on their profile
+  3. Provide skill development recommendations
+  4. Outline specific steps for career preparation
+
+  Structure the response with:
+  - RIASEC Profile Analysis
+  - Career Recommendations
+  - Required Skills
+  - Action Plan
+
+# ReadME configuration
+readme: |
+  The RIASEC Career Advisor helps individuals discover suitable career paths using Holland's RIASEC model. By analyzing responses to personality questions and considering educational background, it provides personalized career recommendations.
+
+  Features:
+  - RIASEC personality assessment
+  - Tailored career suggestions
+  - Skill development guidance
+  - Actionable career planning steps
+
+  Example Usage:
+  Input1: "I enjoy programming, problem-solving, and working with data. I prefer logical tasks and independent work."
+  Input2: "Currently pursuing Computer Science degree, familiar with Python and Java, interested in AI/ML"
