@@ -1,4 +1,4 @@
-# RIASEC Career Advisor
+# AI-Career-Advisor based on RIASEC Framework
 
 ## Overview
 The RIASEC Career Advisor is an AI-powered guidance system that helps students and professionals identify optimal career paths using Holland's RIASEC (Realistic, Investigative, Artistic, Social, Enterprising, Conventional) model. This tool provides personalized career recommendations by analyzing personality traits, interests, and educational background.
